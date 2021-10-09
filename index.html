@@ -52,7 +52,7 @@ const camera = new BABYLON.ArcRotateCamera("camera",Math.PI/2,Math.PI/4,5,new BA
 camera.attachControl(canvas,true)
 const light = new BABYLON.HemisphericLight("light",new BABYLON.Vector3(0,1,0));
 
-BABYLON.SceneLoader.ImportMesh("","https://raw.githubusercontent.com/ShrianshGoel/solid-octo-palm-tree/main/","girl.glb",scene,function(newMeshes,particleSystems,skeletons,animaitonGroups){
+BABYLON.SceneLoader.ImportMesh("","https://raw.githubusercontent.com/ShrianshGoel/solid-octo-palm-tree/main/","age.glb",scene,function(newMeshes,particleSystems,skeletons,animaitonGroups){
 var hero =newMeshes[0];
 camera.target = hero
         const sambaAnim = scene.getAnimationGroupByName("Take 001");
