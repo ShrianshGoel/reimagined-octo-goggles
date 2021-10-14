@@ -48,18 +48,35 @@
         
      const createScene= () =>{
 const scene = new BABYLON.Scene(engine);
-const camera = new BABYLON.ArcRotateCamera("camera",Math.PI/2,Math.PI/4,5,new BABYLON.Vector3(0,0,0));
+const camera = new BABYLON.ArcRotateCamera("camera",Math.PI/2,Math.PI/4,5,new BABYLON.Vector3(0,40,30));
 camera.attachControl(canvas,true)
 const light = new BABYLON.HemisphericLight("light",new BABYLON.Vector3(0,1,0));
 
-BABYLON.SceneLoader.ImportMesh("","https://raw.githubusercontent.com/ShrianshGoel/solid-octo-palm-tree/main/","age.glb",scene,function(newMeshes,particleSystems,skeletons,animaitonGroups){
+BABYLON.SceneLoader.ImportMesh("","https://raw.githubusercontent.com/ShrianshGoel/solid-octo-palm-tree/main/","zhang.glb",scene,function(newMeshes,particleSystems,skeletons,animaitonGroups){
 var hero =newMeshes[0];
 camera.target = hero
+  hero.scaling.scaleInPlace(9)
         const sambaAnim = scene.getAnimationGroupByName("Take 001");
      sambaAnim.start(false, 1.0, sambaAnim.from, sambaAnim.to, false);
 
      })
+     BABYLON.SceneLoader.ImportMesh("","https://raw.githubusercontent.com/ShrianshGoel/solid-octo-palm-tree/main/","demon.glb",scene,function(newMeshes,particleSystems,skeletons,animaitonGroups){
+var hero2 =newMeshes[0];
+hero2.position.z=15;
+hero2.rotation = new BABYLON.Vector3(0,25,0)
+  hero2.scaling.scaleInPlace(9)
+        const sambaAnim = scene.getAnimationGroupByName("Take 001");
+     sambaAnim.start(false, 1.0, sambaAnim.from, sambaAnim.to, false);
 
+     })
+BABYLON.SceneLoader.ImportMesh("","https://raw.githubusercontent.com/ShrianshGoel/super-duper-octo-fortnight/main/","Ship.glb",scene,function(newMeshes,particleSystems,skeletons,animaitonGroups){
+var hero1 =newMeshes[0];
+  hero1.position.y=-20
+    hero1.position.z=-40
+        const sambaAnim = scene.getAnimationGroupByName("Take 001");
+     sambaAnim.start(false, 1.0, sambaAnim.from, sambaAnim.to, false);
+
+     })
 return scene;
 }
                 window.initFunction = async function() {
